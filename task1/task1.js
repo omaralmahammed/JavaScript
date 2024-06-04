@@ -85,5 +85,21 @@ console.log(array2);
 
 var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
 
-arr1.sort((a, b) => a - b);  
+arr1.sort((a, b) => a - b);
 console.log(arr1);
+
+////////////////////////////////////////////////////////////////
+
+// var sortedarr1 = "";
+// for (let i = 0; i<arr1.length ; i++){
+//     for (let j = i +1; j <arr1.length; j++){
+//         if (arr1[j] < arr1[i] ){
+//             const temp = arr1[i];
+//             arr1[i] = arr1[j];
+//             arr1[j] = temp;
+//         }
+//     }
+//     sortedarr1 += arr1[i] + ", ";
+// }
+
+// console.log(sortedarr1);
