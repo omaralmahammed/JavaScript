@@ -513,8 +513,13 @@ Ex: randomNumber()
 
 Ex: randomNumber()
 => 0.475
-
 */
+
+function randomNumber() {
+  return Math.random();
+}
+
+console.log(randomNumber());
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -531,6 +536,12 @@ Ex: randomBetweenNumbers(3,100)
 => 23
 
 */
+
+function randomBetweenNumbers(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+console.log(randomBetweenNumbers(3, 20));
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -607,6 +618,16 @@ Ex: counter()
 => 3
 
 */
+// var num = 0;
+function counter() {
+  if (this.num === undefined) this.num = 0;
+  // globalThis.num = 0;
+  return num++;
+}
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -640,3 +661,15 @@ Ex: resetCounter()
 Ex: counter()
 => 1
 */
+
+function resetCounter() {
+  this.num = 0;
+}
+
+resetCounter();
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+console.log(num + " this is num");
