@@ -1,0 +1,147 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional tasks</title>
+
+    <style>
+      #square {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+      }
+
+      img {
+        width: 600px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Exercise #2 (2): Changing colors -->
+    <div>
+      <div id="square"></div>
+
+      <script>
+        let square = document.getElementById("square");
+
+        square.style.backgroundColor = "blue";
+
+        square.addEventListener("click", function () {
+          square.style.backgroundColor = "red";
+        });
+      </script>
+    </div>
+    <hr />
+    <br /><br /><br />
+    <!-- Exercise #3 (3): Changing images -->
+    <div>
+      <div>
+        <select id="carsSelect">
+          <option value="selcet">Select</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="bmw">BMW</option>
+          <option value="toyota">Toyota</option>
+        </select>
+
+        <br />
+        <img
+          id="carImage"
+          src="https://i.pinimg.com/236x/05/65/6c/05656cc2d7d56640e503f07af866d7c8.jpg"
+          alt="No Image"
+        />
+      </div>
+      <script>
+        let selectElement = document.getElementById("carsSelect");
+        let car_image = document.getElementById("carImage");
+
+        selectElement.addEventListener("click", selector);
+
+        function selector() {
+          if (selectElement.value == "selcet") {
+            car_image.src =
+              "https://i.pinimg.com/236x/05/65/6c/05656cc2d7d56640e503f07af866d7c8.jpg";
+          } else if (selectElement.value == "mercedes") {
+            car_image.src =
+              "https://i.pinimg.com/236x/e8/1b/f2/e81bf231186d5603d7def9cda4c20f7a.jpg";
+          } else if (selectElement.value == "bmw") {
+            car_image.src =
+              "https://i.pinimg.com/236x/aa/46/d1/aa46d148f18bc0079891458976165d17.jpg";
+          } else if (selectElement.value == "toyota") {
+            car_image.src =
+              "https://i.pinimg.com/236x/0e/78/34/0e783494eb92e71d78d56de618a6d7bf.jpg";
+          }
+        }
+      </script>
+    </div>
+    <hr />
+    <br /><br /><br /><br />
+    <!-- Exercise #5 (5): Input check -->
+
+    <div>
+      <!-- Password HTML -->
+      <label for="pwd1">Password (min 6 characters):</label>
+      <input type="password" id="pwd1" placeholder="Password" />
+      <span id="error1" style="color: red"></span>
+      <br />
+
+      <!-- Repeat password HTML -->
+      <label for="pwd2">Repeat password:</label>
+      <input type="password" id="pwd2" placeholder="Repeat Password" />
+      <span id="error2" style="color: red"></span>
+      <br />
+
+      <!-- Submit Button HTML -->
+      <input type="submit" value="Submit" id="submit" style="display: none" />
+
+      <!-- Password JS -->
+      <script>
+        let main_password = document.getElementById("pwd1");
+        let massage_error = document.getElementById("error1");
+
+        main_password.addEventListener("input", getError);
+
+        function getError() {
+          if (main_password.value.length < 6) {
+            massage_error.innerHTML = "Too short";
+          } else {
+            massage_error.innerHTML = "";
+          }
+        }
+      </script>
+
+      <!-- Repeat password JS -->
+      <script>
+        let repeat_password = document.getElementById("pwd2");
+        let repeat_error = document.getElementById("error2");
+
+        repeat_password.addEventListener("input", getError1);
+
+        function getError1() {
+          if (repeat_password.value != main_password.value) {
+            repeat_error.innerHTML = "The two passwprd dosn't work! ";
+          } else {
+            repeat_error.innerHTML = "";
+          }
+        }
+      </script>
+
+      <!-- Submit Button JS -->
+      <script>
+        let submit = document.getElementById("submit");
+
+        main_password.addEventListener("input", hide);
+        repeat_password.addEventListener("input", hide);
+
+        function hide() {
+          if (repeat_password.value === main_password.value) {
+            submit.style.display = "inline";
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
