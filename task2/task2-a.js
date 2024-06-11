@@ -61,14 +61,14 @@ Display an alert box to show the result. Go to the editor
 Sample numbers : -5, -2, -6, 0, -1 
 Output : 0 */
 
-// let arr4 = [-5, 6, -6, 0, -1];
-// let maxx = arr4[0];
-// for (let i = 0; i < arr4.length; i++) {
-//   if (maxx < arr4[i]) {
-//     maxx = arr4[i];
-//   }
-// }
-// alert(maxx);
+let arr4 = [-5, 6, -6, 0, -1];
+let maxx = arr4[0];
+for (let i = 0; i < arr4.length; i++) {
+  if (maxx < arr4[i]) {
+    maxx = arr4[i];
+  }
+}
+alert(maxx);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 

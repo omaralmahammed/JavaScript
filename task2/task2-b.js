@@ -9,7 +9,7 @@
  *
  * @format
  */
-i = 59;
+i = 65;
 if (i >= 90) {
   console.log("A");
 } else if (i >= 80) {

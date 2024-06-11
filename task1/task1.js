@@ -10,6 +10,7 @@ console.log(zakat);
 
 // [ 1,7  9  45, ] //the false array
 console.log([1, 7, 9, 45]);
+
 //add comma between the elements and delete the comma after 45
 
 // ["Str" "alex","moh"  // the false array
@@ -24,7 +25,6 @@ console.log(["the", "fox", "over", "lazy", "dog"]);
 // Question 3 // What the index of "Banana","Tomato"?
 
 var fruits = ["Tomato", "Banana", "Watermelon"];
-
 console.log(fruits.indexOf("Banana")); // the index of Banana is 1
 console.log(fruits.indexOf("Tomato")); // the index of Tomato is 0
 

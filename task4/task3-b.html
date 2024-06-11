@@ -1,0 +1,125 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- First group of data -->
+
+    <form id="submitForm">
+      <div>
+        <label for="name"> Name :</label>
+        <input type="text" id="name" name="name" /><br />
+
+        <label for="age">Age :</label>
+        <input type="number" id="age" name="age" /><br />
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" /><br />
+
+        <label for="birthDate">Birth Date :</label>
+        <input type="date" id="birthDate" name="birthDate" /><br />
+
+        <label for="image">Your Image :</label>
+        <input type="url" id="image" name="image" />
+        <br /><br /><br />
+      </div>
+      <hr />
+
+      <!-- Second group of data -->
+      <div>
+        <label for="description"> Description :</label>
+        <input type="text" id="description" name="description" /><br />
+
+        <label for="majer">Majer & University :</label>
+        <input type="text" id="majer" name="majer" /><br />
+
+        <label for="">Programming Language :</label>
+
+        <input type="checkbox" id="html" name="html" />
+        <label for="html">HTML </label>
+
+        <input type="checkbox" id="css" name="css" />
+        <label for="css">CSS </label>
+
+        <input type="checkbox" id="javascript" name="javascript" />
+        <label for="javascript">JS </label>
+      </div>
+
+      <br /><br />
+      <!-- Third group of data -->
+      <label for="siblibgsNum">Siblibgs number :</label><br />
+      <input type="number" id="siblibgsNum" name="siblibgsNum" /><br /><br />
+
+      <label for="siblibgsDes">Description of siblings :</label><br />
+      <input type="text" id="siblibgsDes" name="siblibgsDes" />
+
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      let allData = document.getElementById("submitForm");
+
+      allData.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        /////////////////////////////////////////////////////////////////////////////////////
+        // First group of data
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+        const birthDate = document.getElementById("birthDate").value;
+        const image = document.getElementById("image").value;
+
+        const formData1 = {
+          name: name,
+          age: age,
+          gender: gender,
+          birthDate: birthDate,
+          image: image,
+        };
+
+        localStorage.setItem("formData1", JSON.stringify(formData1));
+        console.log(formData1);
+
+        /////////////////////////////////////////////////////////////////////////////////////
+        // Second group of data
+
+        const description = document.getElementById("description").value;
+        const majer = document.getElementById("majer").value;
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const programmingLanguages = Array.from(checkboxes)
+          .filter((checkbox) => checkbox.checked)
+          .map((checkbox) => checkbox.name); // idk HOW BUT IT WORKS
+
+        const formData2 = {
+          description: description,
+          majer: majer,
+          programmingLanguages: programmingLanguages,
+        };
+
+        localStorage.setItem("formData2", JSON.stringify(formData2));
+        console.log(formData2);
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //Third group of data
+        const siblibgsNum = document.getElementById("siblibgsNum").value;
+        const siblibgsDes = document.getElementById("siblibgsDes").value;
+
+        const formData3 = {
+          siblibgsNum: siblibgsNum,
+          siblibgsDes: siblibgsDes,
+        };
+
+        localStorage.setItem("formData3", JSON.stringify(formData3));
+        console.log(formData3);
+      });
+    </script>
+  </body>
+</html>

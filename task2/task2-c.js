@@ -38,9 +38,8 @@ for (let i = 1; i <= 8; i++) {
 
 let x = "don’t know why";
 
-if (x.includes("y")) {
+if (x.includes("k")) {
   console.log("yes");
 } else {
   console.log("no");
 }
-
