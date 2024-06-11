@@ -1,0 +1,30 @@
+[
+  {
+    "name": "omsr",
+    "age": 30,
+    "city": "Irbid",
+    "email": "john.doe@example.com",
+    "is_student": false,
+    "hobbies": ["reading", "running", "playing guitar"],
+    "address": {
+      "street": "123 Main Street",
+      "city": "Amman",
+      "zip_code": "10001",
+      "country": "USA"
+    }
+  },
+  {
+    "name": "aya",
+    "age": 25,
+    "city": "Los Angeles",
+    "email": "jane.smith@example.com",
+    "is_student": true,
+    "hobbies": ["painting", "hiking", "cooking"],
+    "address": {
+      "street": "456 Elm Street",
+      "city": "Los Angeles",
+      "zip_code": "90001",
+      "country": "USA"
+    }
+  }
+]
