@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <!-- First group of data -->
 
@@ -37,6 +38,8 @@
 
         <label for="majer">Majer & University :</label>
         <input type="text" id="majer" name="majer" /><br />
+
+        <!-- Check Box -->
 
         <label for="">Programming Language :</label>
 
@@ -99,9 +102,9 @@
         // checkboxes
 
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        console.log(checkboxes);
-        const programmingLanguages = [];
+        // console.log(checkboxes);
 
+        const programmingLanguages = [];
         checkboxes.forEach(function (x) {
           if (x.checked) {
             programmingLanguages.push(x.name);
