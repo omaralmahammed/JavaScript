@@ -51,14 +51,17 @@
       </div>
 
       <br /><br />
+      <hr />
       <!-- Third group of data -->
-      <label for="siblibgsNum">Siblibgs number :</label><br />
-      <input type="number" id="siblibgsNum" name="siblibgsNum" /><br /><br />
+      <div>
+        <label for="siblibgsNum">Siblibgs number :</label><br />
+        <input type="number" id="siblibgsNum" name="siblibgsNum" /><br /><br />
 
-      <label for="siblibgsDes">Description of siblings :</label><br />
-      <input type="text" id="siblibgsDes" name="siblibgsDes" />
-
+        <label for="siblibgsDes">Description of siblings :</label><br />
+        <input type="text" id="siblibgsDes" name="siblibgsDes" />
+      </div>
       <br /><br />
+
       <button type="submit">Submit</button>
     </form>
 
@@ -93,10 +96,21 @@
         const description = document.getElementById("description").value;
         const majer = document.getElementById("majer").value;
 
+        // checkboxes
+
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const programmingLanguages = Array.from(checkboxes)
-          .filter((checkbox) => checkbox.checked)
-          .map((checkbox) => checkbox.name); // idk HOW BUT IT WORKS
+        console.log(checkboxes);
+        const programmingLanguages = [];
+
+        checkboxes.forEach(function (x) {
+          if (x.checked) {
+            programmingLanguages.push(x.name);
+          }
+        });
+
+        // const programmingLanguages = Array.from(checkboxes)
+        //   .filter((checkbox) => checkbox.checked)
+        //   .map((checkbox) => checkbox.name); // idk HOW BUT IT WORKS
 
         const formData2 = {
           description: description,

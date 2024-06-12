@@ -39,6 +39,7 @@
       <input type="text" id="lastName" />
       <span id="error2" style="color: red"></span>
     </div>
+
     <br />
 
     <script>
@@ -70,8 +71,9 @@
       let message_error3 = document.getElementById("error3");
 
       birthDate.addEventListener("input", getError3);
+
       var pattern_birthDate =
-        /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+        /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0,1,2])\/(19|20)\d{2}$/;
 
       function getError3() {
         if (pattern_birthDate.test(birthDate.value)) {
@@ -96,8 +98,8 @@
       let email_error = document.getElementById("error4");
 
       email.addEventListener("input", getError4);
-      var patternEmail = /^[0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-      //   var patternEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+      // var patternEmail = /^[0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+      var patternEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
       function getError4() {
         if (patternEmail.test(email.value)) {
